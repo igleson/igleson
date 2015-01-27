@@ -7,11 +7,8 @@ app.filter('slice', function() {
 });
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
-function($stateProvider, $urlRouterProvider, $locationProvider) {
-
+function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/posts/page/1');
-
-    $locationProvider.html5Provider(true);
 
     $stateProvider
         .state('postsPage', {
