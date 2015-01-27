@@ -1,0 +1,27 @@
+<div class="row" ng-controller="postsController">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        <div class="post-preview" ng-repeat="post in data.allPosts | slice:interface.init:interface.final  ">
+            <a href ng-click="functions.seePost($index)">
+                <h2 class="post-title">
+                    {{ post.title }}
+                </h2>
+                <h3 class="post-subtitle">
+                    {{ post.subtitle }}
+                </h3>
+            </a>
+            <p class="post-meta">Posted by {{post.creator}} on {{post.date}}</p>
+            <hr>
+        </div>
+
+        <ul class="pager">
+            <li class="next">
+                <a ng-show="interface.final < data.allPosts.length" ng-click="functions.nextPage()">Older Posts &rarr;</a>
+            </li>
+            <li style="float: left;">
+                <a ng-show="interface.page > 1" ng-click="functions.previousPage()">&larr; Newer Posts </a>
+            </li>
+        </ul>
+
+    </div>
+</div>

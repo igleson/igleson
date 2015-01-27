@@ -9,8 +9,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/clean-blog.min.css" rel="stylesheet">
 
-    <script src="js/posts.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <script src="js/posts.js"></script>
 
 </head>
 
@@ -48,37 +49,10 @@
     </header>
     </a>
 
-    <div class="container" ng-app ng-controller="postsController">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-                <div class="post-preview" ng-repeat="post in func.postForPage() ">
-                    <a href="post.html">
-                            <h2 class="post-title">
-                            {{ post.title }}
-                        </h2>
-                        <h3 class="post-subtitle">
-                            {{ post.subtitle }}
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by {{post.creator}} on {{post.date}}</p>
-                    <hr>
-                </div>
-
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                    <li style="float: left;">
-                        <a href="#">&larr; Newer Posts </a>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
+    <div class="container" ng-app="myApp">
+        <div ui-view> </div>
     </div>
 
-    <hr>
 
     <footer>
         <div class="container">
