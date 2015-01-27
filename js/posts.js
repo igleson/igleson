@@ -11,7 +11,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $urlRouterProvider.otherwise('/posts/page/1');
 
-//    $locationProvider.html5Provider(true);
+    $locationProvider.html5Provider(true);
 
     $stateProvider
         .state('postsPage', {
