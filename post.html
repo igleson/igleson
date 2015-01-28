@@ -1,17 +1,16 @@
 <article ng-controller="postController">
 
-    <div class="post-preview">
+    <div class="post-preview" style=" width: 50%; margin: 0 auto;">
         <h2 class="post-title">
             {{ data.post.title }}
         </h2>
         <h3 class="post-subtitle">
             {{ data.post.subtitle }}
         </h3>
-        <p class="post-meta">Posted by {{data.post.creator}} on {{data.post.date}}</p>
         <hr>
+        <p class="post-meta" style=" width: 50%; margin: 0 auto;">Posted by {{data.post.creator}} on {{data.post.date}}</p>
     </div>
 
-
-    <link rel="import" src="teste.html">
+    <ng-include src="data.post.htmlSrc"></ng-include>
 
 </article>
