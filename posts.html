@@ -3,15 +3,11 @@
 
         <div class="post-preview" ng-repeat="post in data.allPosts | slice:interface.init:interface.final">
             <a href ng-click="functions.seePost($index)">
-                <h2 class="post-title">
-                    {{ post.title }}
-                </h2>
-                <h3 class="post-subtitle">
-                    {{ post.subtitle }}
-                </h3>
+                <h2 class="post-title"> {{ post.title }} </h2>
+                <h3 class="post-subtitle"> {{ post.subtitle }} </h3>
             </a>
-            <p class="post-meta">Posted by {{post.creator}} on {{post.date}}</p>
             <hr>
+            <p class="post-meta">Postado por {{post.creators | creators}} em {{post.date}}</p>
         </div>
 
         <ul class="pager">
