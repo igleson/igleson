@@ -40,6 +40,12 @@ function($stateProvider, $urlRouterProvider) {
         .state('postTitle', {
             url: '/post/:title',
             templateUrl: "post.html"
+        }).state('postsAuthor', {
+            url: '/posts/:authorId',
+            templateUrl: 'posts.html'
+        }).state('postsAuthorPage', {
+            url: '/posts/:authorId/page/:pageNum',
+            templateUrl: 'posts.html'
         });
 }]);
 
@@ -55,59 +61,71 @@ posts = [
     {title:'Lorem ipsum07', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
     {title:'Lorem ipsum08', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
     {title:'Lorem ipsum09', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum10', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum10', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','tales','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
     {title:'Lorem ipsum11', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum12', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum13', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum14', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum12', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum13', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','tales','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum14', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','tales','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
     {title:'Lorem ipsum15', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum16', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum16', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
     {title:'Lorem ipsum17', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
     {title:'Lorem ipsum18', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum19', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum19', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
     {title:'Lorem ipsum20', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
     {title:'Lorem ipsum21', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum22', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum22', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
     {title:'Lorem ipsum23', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
     {title:'Lorem ipsum24', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum25', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum25', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
     {title:'Lorem ipsum26', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
     {title:'Lorem ipsum27', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum28', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum29', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum30', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum31', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum32', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum33', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum34', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum35', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum36', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum37', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum38', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum39', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum39', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'},
-    {title:'Lorem ipsum40', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','igleson'], date:'26-01-2014', htmlSrc:'teste.html'}
+    {title:'Lorem ipsum28', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum29', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum30', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum31', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum32', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum33', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum34', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum35', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum36', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum37', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum38', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum39', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum39', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'},
+    {title:'Lorem ipsum40', subtitle:'dolor sit amet, consectetur adipiscing elit', authorsId:['igleson','igleson','tales'], date:'26-01-2014', htmlSrc:'teste.html'}
 ];
 
 app.controller('postsController', function ($scope, $stateParams, $location) {
 
     $scope.data = {}
-    $scope.data.allPosts = posts
+    $scope.data.authorId = $stateParams.authorId;
+    $scope.data.allPosts = posts;
+
+    $scope.data.baseUrl = '/posts/page/';
+
+    if($scope.data.authorId){
+        $scope.data.baseUrl = '/posts/' + $scope.data.authorId + '/page/';
+        $scope.data.allPosts = $scope.data.allPosts.filter(function(element){
+            return $.inArray($scope.data.authorId, element.authorsId) >= 1;
+        })
+    }
 
     $scope.interface = {};
+    $scope.interface.page = parseInt($stateParams.pageNum) || 1;
 
-    $scope.interface.page = parseInt($stateParams.pageNum);
     $scope.interface.init = ($scope.interface.page-1)*10;
+
     $scope.interface.final = $scope.interface.init+10;
 
     $scope.functions = {}
 
     $scope.functions.nextPage = function(){
-        $location.path("/posts/page/" + ($scope.interface.page+1))
+        alert($scope.data.baseUrl + ($scope.interface.page+1))
+        $location.path($scope.data.baseUrl + ($scope.interface.page+1))
     }
 
     $scope.functions.previousPage = function(){
-        $location.path("/posts/page/" + ($scope.interface.page-1))
+        $location.path($scope.data.baseUrl + ($scope.interface.page-1))
     }
 
     $scope.functions.seePost = function(index){

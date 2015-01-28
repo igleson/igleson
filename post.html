@@ -1,6 +1,6 @@
 <article ng-controller="postController">
 
-    <div class="post-preview" style=" width: 50%; margin: 0 auto;">
+    <div class="post-preview">
         <h2 class="post-title">
             {{ data.post.title }}
         </h2>
@@ -8,9 +8,12 @@
             {{ data.post.subtitle }}
         </h3>
         <hr>
-        <p class="post-meta">Postado por {{data.post.authorsId | authors}} em {{data.post.date}}</p>
     </div>
 
     <ng-include src="data.post.htmlSrc"></ng-include>
+
+    <div class="post-preview ">
+        <p class="post-meta">Postado por {{data.post.authorsId | authors}} em {{data.post.date}}</p>
+    </div>
 
 </article>
