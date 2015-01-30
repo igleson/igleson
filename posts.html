@@ -1,5 +1,5 @@
 <div class="row" ng-controller="postsController">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" ng-show="(data.allPosts | slice:interface.init:interface.final).length">
 
         <div class="post-preview" ng-repeat="post in data.allPosts | slice:interface.init:interface.final">
             <a href ng-click="functions.seePost($index)">
@@ -8,6 +8,8 @@
             </a>
             <hr>
             <p class="post-meta">Postado por {{post.authorsId | authors}} em {{post.date}}</p>
+
+            <img ng-src="{{post.mainImgSrc}}"/>
         </div>
 
         <ul class="pager">
@@ -18,6 +20,10 @@
                 <a href ng-show="interface.page > 1" ng-click="functions.previousPage()">&larr; Newer Posts </a>
             </li>
         </ul>
-
+    </div>
+    <div ng-show="!(data.allPosts | slice:interface.init:interface.final).length">
+        <h6 style="text-align: center; font-size: 70px; color: #777777">
+            404! Não existem mais posts
+        </h6>
     </div>
 </div>

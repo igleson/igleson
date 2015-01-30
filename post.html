@@ -1,19 +1,27 @@
 <article ng-controller="postController">
 
-    <div class="post-preview">
-        <h2 class="post-title">
-            {{ data.post.title }}
-        </h2>
-        <h3 class="post-subtitle">
-            {{ data.post.subtitle }}
-        </h3>
-        <hr>
+    <div ng-show="data.post">
+        <div class="post-preview">
+            <h2 class="post-title">
+                {{ data.post.title }}
+            </h2>
+            <h3 class="post-subtitle">
+                {{ data.post.subtitle }}
+            </h3>
+            <hr>
+        </div>
+
+        <ng-include src="data.post.htmlSrc"></ng-include>
+
+        <div class="post-preview ">
+            <p class="post-meta">Postado por {{data.post.authorsId | authors}} em {{data.post.date}}</p>
+        </div>
     </div>
 
-    <ng-include src="data.post.htmlSrc"></ng-include>
-
-    <div class="post-preview ">
-        <p class="post-meta">Postado por {{data.post.authorsId | authors}} em {{data.post.date}}</p>
+    <div ng-show="!data.post">
+        <h6 style="text-align: center; font-size: 70px; color: #777777">
+            404! O posts que você procura não existe ou foi removido.
+        </h6>
     </div>
 
 </article>
