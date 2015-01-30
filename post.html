@@ -13,8 +13,23 @@
 
         <ng-include src="data.post.htmlSrc"></ng-include>
 
-        <div class="post-preview ">
-            <p class="post-meta">Postado por {{data.post.authorsId | authors}} em {{data.post.date}}</p>
+
+
+        <div class="row">
+            <div class="team-member" ng-repeat="author in (data.post | authors)" ng-click="functions.toAuthor(author.id)">
+
+                <img ng-src="{{author.imgSrc}}" class="img-responsive img-circle">
+                <h4> {{author.name}}</h4>
+
+                <p class="text-muted"> {{author.bio}}</p>
+                <ul class="list-inline social-buttons">
+                    <li ng-show="author.twitter"><a ng-href="{{author.twitter}}"><i class="fa fa-twitter"></i></a></li>
+                    <li ng-show="author.facebook"><a ng-href="{{author.facebook}}"><i class="fa fa-facebook"></i></a></li>
+                    <li ng-show="author.linkedin"><a ng-href="{{author.linkedin}}"><i class="fa fa-linkedin"></i></a></li>
+                    <li ng-show="author.github"><a ng-href="{{author.github}}"><i class="fa fa-github"></i></a></li>
+                </ul>
+
+            </div>
         </div>
     </div>
 

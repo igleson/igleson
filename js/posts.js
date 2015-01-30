@@ -6,7 +6,7 @@ app.filter('slice', function() {
     };
 });
 
-app.filter('authors', function() {
+app.filter('authorsNames', function() {
     return function(authorsId) {
         authorsNames = [];
         for(var i = 0; i < authorsId.length; i++){
@@ -27,6 +27,14 @@ app.filter('authors', function() {
         return ret;
     };
 });
+
+app.filter('authors', function(){
+    return function(post){
+        return authors.filter(function(element){
+            return $.inArray(element.id, post.authorsId) >= 0;
+        });
+    }
+})
 
 app.config(['$stateProvider', '$urlRouterProvider',
 function($stateProvider, $urlRouterProvider) {
@@ -63,7 +71,6 @@ app.controller('postsController', function ($scope, $stateParams, $location) {
     if($scope.data.authorId){
         $scope.data.baseUrl = '/posts/' + $scope.data.authorId + '/page/';
         $scope.data.allPosts = $scope.data.allPosts.filter(function(element){
-            alert($.inArray($scope.data.authorId, element.authorsId))
             return $.inArray($scope.data.authorId, element.authorsId) >= 0;
         })
     }
@@ -91,17 +98,22 @@ app.controller('postsController', function ($scope, $stateParams, $location) {
     }
 });
 
-app.controller('postController', function ($scope, $stateParams) {
+app.controller('postController', function ($scope, $stateParams, $location) {
 
     $scope.data = {}
     $scope.data.title = $stateParams.title;
 
     var byTitle = function(element){
-        console.log(element.title == $scope.data.title)
         return element.title === $scope.data.title
     }
 
     $scope.data.post = posts.filter(byTitle)[0];
+
+    $scope.functions = {};
+
+    $scope.functions.toAuthor = function(author){
+        $location.path('/posts/' + author)
+    }
 });
 
 app.controller('contribuitorsController', function ($scope, $location) {
